@@ -5,5 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vueの練習</title>
   </head>
-  <body></body>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <div id="app">
+      <p>{{message}}</p>
+      <button v-on:click="reverseMessage">メッセージ反転</button>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello world!',
+        },
+        methods: {
+          reverseMessage: function () {
+            this.message = this.message.split('').reverse().join('');
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
